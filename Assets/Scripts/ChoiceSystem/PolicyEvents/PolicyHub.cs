@@ -151,11 +151,11 @@ public class FoodSaving : IEnforcementable
     }
     public void Enforce()
     {
-        int amount = (int)(GameEvent.Instance.InitResourceTable.foodTable.Max * 0.3f);
+        int amount = (int)(GameEvent.Instance.InitResourceTable.foodTable.Max * 0.2f);
 
         GameEvent.Instance.GetResource.ApplyFood(amount);
 
-        GameEvent.Instance.GetResource.ApplyLeaderShip(-4);
+        GameEvent.Instance.GetResource.ApplyLeaderShip(-2);
     }
 }
 public class PopulationDownSize : IEnforcementable
@@ -170,7 +170,7 @@ public class PopulationDownSize : IEnforcementable
 
         GameEvent.Instance.GetResource.ApplyPopulation(-amount);
 
-        GameEvent.Instance.GetResource.ApplyLeaderShip(-5);
+        GameEvent.Instance.GetResource.ApplyLeaderShip(-3);
     }
 }
 
@@ -201,6 +201,6 @@ public class ExtraWork : IEnforcementable
 
         GameEvent.Instance.GetResource.ApplyPopulation(-population * 2);
 
-        GameEvent.Instance.GetResource.ApplyFood(population * 3);
+        GameEvent.Instance.GetResource.ApplyFood(population * 2);
     }
 }
